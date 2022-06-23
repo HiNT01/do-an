@@ -2,18 +2,26 @@ html {
     font-size: 10px;
     font-family: my font;
 }
+:root {
+    --my-color:#181733;
+    --text-color :rgba(255,255,255,0.6);
+    --text-color-h:rgba(255,255,255,1);
+}
 
 /* header*/
 .header {
     width: 100%;
-    height: 70px;
-    border: 1px solid green;
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
 }
 /* header - logo */
 .logo{
     width: 25%;
-    background-color: #181733;
+    background-color: var(--my-color);
     display: flex;
     position: relative;
     justify-content: center;
@@ -22,14 +30,14 @@ html {
     color: blue;
 }
 .logo > img {
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
 }
 .logo .title {
     margin-left: 0.5rem;
     width: 50%;
     text-transform: uppercase;
-    font-size: 1.6rem;
+    font-size: 2.1rem;
 }
 .logo::after {
     display: none;
@@ -55,22 +63,22 @@ html {
     opacity: 0.9;
 }
 .logo:hover::after,
-    .logo:hover::before  {
+.logo:hover::before  {
     display: block;
 }
 /* end logo */
 /* menu */
 .menu{
     width: 75%;
-    height: 100%;
+    height: auto;
     background-color: rgb(41, 40, 61);
     border-left: 0.1rem solid #29283d;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-color);
 }
 .contact-menu{
     padding: 0.5rem;
     width: 100%;
-    height: 50%;
+    height: 4.8rem;
     display: flex;
     justify-content: space-between;
 }
@@ -94,10 +102,11 @@ html {
 }
 .contact-menu > .contact-mn .list-contact .item-contact > a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-color);
+    font-size: 1.4rem;
 }
 .contact-menu > .contact-mn .list-contact .item-contact > a:hover {
-    color: rgba(255, 255, 255, 1);
+    color: var(--text-color-h);
 }
 .contact-menu .login {
     width: 40%;
@@ -105,30 +114,143 @@ html {
     display: flex;
     justify-content: flex-end;
 }
+/* btn */
+.btn {
+    margin-left: 1.5rem;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color:var(--my-color) ;
+    color: var(--text-color);
+}
+.btn svg {
+    margin-right: 1rem;
+}
+.btn:hover {
+    text-decoration: underline;
+    color: var(--text-color-h);
+    
+
+}
 /* menu-contact */
-.nav{
+.nav-top{
     width: 100%;
-    height: 50%;
-    background-color: violet;
+    height: 6.2rem;
+    display: flex;
+    align-items: center;
+    border-left: 0.1rem solid #29283d;
+}
+.nav-top .nav {
+    flex-grow: 1;
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+}
+.nav-top .nav .item-nav {
+    width: 20%;
+    padding: 2.5rem 0.8rem;
+    background-color: var(--my-color);
+    height: 100%;
+    border-right: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-top .nav .item-nav > a{
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-color-h);
+    text-transform: uppercase;
+}
+.nav-top .nav .item-nav a > svg {
+    margin-left: 0.5rem;
+}
+.nav-top .nav .item-nav:hover > a {
+    color: var(--text-color);
+}
+
+.nav-top .btn-search {
+    width: 6.2rem;
+    height: 100%;
+    padding: 0.8rem 1.6rem;
+    font-size: 3rem;
+    border: none;
+    background-color: var(--my-color);
+    color: var(--text-color-h);
+    cursor: pointer;
+}
+.nav-top .btn-search:hover {
+    color: var(--text-color);
 }
 /* end menu */
 /* end header */
+/* slider */
 .slider{
+    margin-top: 11rem;
     width: 100%;
-    height: 500px;
-    border: 1px solid yellowgreen;
+    height: calc(100vh - 13rem);
+    background-color: aqua;
+    position: relative;
 }
+.slider .btn-bn {
+    position: absolute;
+    top: 50%;
+    padding: 10px 15px;
+    border: none;
+    background-color: blue;
+    color: var(--text-color-h);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.slider .btn-bn:hover {
+    opacity: 0.7;
+}
+.slider .next {
+    left: 20px;
+}
+.slider .prev {
+    right: 20px;
+}
+.slider .content {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: var(--text-color-h);
+}
+/* end slider */
 .n-m {
     width: 100%;
     display: flex;
     height: 500px;
     border: 1px solid red;
 }
+/* news */
 .news {
     width: 75%;
-    height: 100%;
+    height: 100vh;
     border: 1px solid  black;
 }
+.news .top {
+    width: 100%;
+    height: 50vh;
+    border: 1px solid black;
+}
+.news .top .right {
+    width: 30%;
+}
+.news .top .left {
+    width: 70%;
+    
+}
+/* end news */
 .match{
     width: 25%;
     height: 100%;
