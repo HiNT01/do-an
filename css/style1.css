@@ -1,30 +1,118 @@
+html {
+    font-size: 10px;
+    font-family: my font;
+}
+
+/* header*/
 .header {
     width: 100%;
-    height: 200px;
+    height: 70px;
     border: 1px solid green;
     display: flex;
 }
+/* header - logo */
 .logo{
     width: 25%;
-    height: 200px;
-    background-color: yellow;
-
+    background-color: #181733;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: blue;
 }
+.logo > img {
+    width: 24px;
+    height: 24px;
+}
+.logo .title {
+    margin-left: 0.5rem;
+    width: 50%;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+.logo::after {
+    display: none;
+    content: "";
+    width: 10px;
+    height: 35px;
+    position: absolute;
+    background-color: yellow;
+    top: 0;
+    right: 0;
+}
+.logo::before{
+    display: none;
+    content: "";
+    width: 10px;
+    height: 35px;
+    position: absolute;
+    background-color: blue;
+    bottom: 0;
+    left: 0;
+}
+.logo:hover {
+    opacity: 0.9;
+}
+.logo:hover::after,
+    .logo:hover::before  {
+    display: block;
+}
+/* end logo */
+/* menu */
 .menu{
     width: 75%;
     height: 100%;
-    border: 1px solid #fff;
+    background-color: rgb(41, 40, 61);
+    border-left: 0.1rem solid #29283d;
+    color: rgba(255, 255, 255, 0.6);
 }
 .contact-menu{
+    padding: 0.5rem;
     width: 100%;
     height: 50%;
-    background-color: black;
+    display: flex;
+    justify-content: space-between;
 }
+.contact-menu > .contact-mn {
+    width: 50%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+.contact-menu .contact-mn > span {
+    text-transform: uppercase;
+    margin-right: 1rem;
+}
+.contact-menu > .contact-mn .list-contact {
+    display: flex;
+    list-style: none;
+    
+}
+.contact-menu > .contact-mn .list-contact .item-contact {
+    margin-right: 1rem;
+}
+.contact-menu > .contact-mn .list-contact .item-contact > a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+}
+.contact-menu > .contact-mn .list-contact .item-contact > a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+.contact-menu .login {
+    width: 40%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+}
+/* menu-contact */
 .nav{
     width: 100%;
     height: 50%;
     background-color: violet;
 }
+/* end menu */
+/* end header */
 .slider{
     width: 100%;
     height: 500px;
